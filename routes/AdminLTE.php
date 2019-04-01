@@ -12,5 +12,18 @@
 */
 
 Route::get('/', function () {
-    return view('wel');
+    return view('welcome');
+});
+
+
+// 后台目录
+Route::namespace('AdminLTE')->group(function () {
+    // 跳转提示页
+    Route::resource('prompt', 'PromptController');
+
+    // 登录页
+    Route::any('login', 'LoginController@login');
+
+    // 登录
+    Route::any('passport', 'LoginController@passport');
 });
