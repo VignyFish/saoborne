@@ -39,6 +39,9 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
+        // 添加后台路由文件 
+        $this->mapAdminLTERoutes();
+
         //
     }
 
@@ -55,6 +58,23 @@ class RouteServiceProvider extends ServiceProvider
              ->namespace($this->namespace)
              ->group(base_path('routes/web.php'));
     }
+
+    /**
+     * Define the "AdminTLE" routes for the application.
+     *
+     * These routes are typically stateless.
+     *
+     * @return void
+     */
+    protected function mapAdminLTERoutes()
+    {
+        Route::prefix('AdminLTE')
+             ->namespace($this->namespace)
+             ->group(base_path('routes/AdminLTE.php'));
+    }
+
+
+
 
     /**
      * Define the "api" routes for the application.

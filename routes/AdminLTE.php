@@ -11,13 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('foo', function () {
+    return 'Hello World';
 });
 
 
 // 后台目录
 Route::namespace('AdminLTE')->group(function () {
+
     // 跳转提示页
     Route::resource('prompt', 'PromptController');
 
@@ -26,4 +27,7 @@ Route::namespace('AdminLTE')->group(function () {
 
     // 登录
     Route::any('passport', 'LoginController@passport');
+
+    // 后台首页
+    Route::any('index', 'IndexController@index');
 });
