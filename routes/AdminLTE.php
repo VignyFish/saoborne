@@ -30,4 +30,13 @@ Route::namespace('AdminLTE')->group(function () {
 
     // 后台首页
     Route::any('index', 'IndexController@index');
+
+
+
+
+
+
+
+    // 普擎科技友情链接
+    Route::any('pqlink', "IndexController@pqlink");
 });

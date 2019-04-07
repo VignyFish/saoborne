@@ -17,4 +17,13 @@ class IndexController extends BaseController
     {
         return view('AdminLTE.index.index');
     }
+
+    /**
+     * 普擎科技官网外链
+     * 
+     */
+    public function pqlink()
+    {
+        return view('AdminLTE.pqlink.pqlink');
+    }
 }
